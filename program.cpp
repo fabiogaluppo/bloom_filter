@@ -47,7 +47,7 @@ namespace bloom_filter
         struct default_hasher_adapter<std::array<int, 3>>
         {
             inline static const void* key(const std::array<int, 3>& value) { return &value[0]; }
-            inline static int len(const std::array<int, 3>& value) { return static_cast<int>(value.size()); }
+            inline static int len(const std::array<int, 3>& value) { return static_cast<int>(sizeof(int) * value.size()); }
         };
     }
 }
